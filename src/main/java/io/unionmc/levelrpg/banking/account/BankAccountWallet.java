@@ -1,22 +1,23 @@
-package io.level.levelroleplay.banking.impl;
+package io.unionmc.levelrpg.banking.account;
 
-import io.level.levelroleplay.banking.IBankAccountVault;
-import io.level.levelroleplay.banking.ICurrency;
+import io.unionmc.levelrpg.banking.IBankAccountWallet;
+import io.unionmc.levelrpg.banking.ICurrency;
+import io.unionmc.levelrpg.banking.currency.Currencies;
 
 import java.math.BigDecimal;
 
-public class BankAccountVault implements IBankAccountVault {
+public class BankAccountWallet implements IBankAccountWallet {
 
     private ICurrency currency;
 
     private BigDecimal currentAmount;
     private BigDecimal rate;
 
-    public BankAccountVault(Currencies currencies){
+    public BankAccountWallet(Currencies currencies){
         currency = currencies.getCurrency();
 
         if(currency != null){
-            rate =  new BigDecimal(currency.getRate());
+            rate = new BigDecimal(currencies.getCurrency().getRate().doubleValue());
         }
     }
 

@@ -1,4 +1,4 @@
-package io.level.levelroleplay;
+package io.unionmc.levelrpg;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
